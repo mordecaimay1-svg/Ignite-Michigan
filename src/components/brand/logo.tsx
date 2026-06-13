@@ -37,23 +37,29 @@ export function Logo({
       width={width}
       height={height}
       priority={priority}
+      unoptimized
       className={cn(
-        "h-auto w-auto max-w-full bg-transparent object-contain",
-        "drop-shadow-[0_2px_16px_rgba(255,122,0,0.2)]",
+        "h-auto w-auto max-w-full object-contain",
+        "drop-shadow-[0_4px_24px_rgba(255,100,0,0.35)]",
         sizeClass,
         className
       )}
+      style={{ background: "transparent" }}
     />
   );
 
   if (href === false) {
-    return <span className="inline-flex shrink-0 bg-transparent">{image}</span>;
+    return (
+      <span className="inline-flex shrink-0 items-center justify-center bg-transparent">
+        {image}
+      </span>
+    );
   }
 
   return (
     <Link
       href={href}
-      className="inline-flex shrink-0 items-center bg-transparent transition-opacity hover:opacity-90"
+      className="inline-flex shrink-0 items-center justify-center bg-transparent transition-opacity hover:opacity-90"
       aria-label={`${SITE.name} home`}
     >
       {image}
