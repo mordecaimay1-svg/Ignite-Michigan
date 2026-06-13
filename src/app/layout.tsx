@@ -3,6 +3,7 @@ import { Inter, Space_Grotesk } from "next/font/google";
 import { Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { Analytics } from "@/components/analytics";
+import { HubSpotTracking } from "@/components/hubspot-tracking";
 import { Toaster } from "@/components/ui/sonner";
 import { createMetadata } from "@/lib/metadata";
 import { LOGO } from "@/lib/constants";
@@ -47,6 +48,7 @@ export default function RootLayout({
           {children}
           <Toaster richColors position="top-center" />
           <Analytics />
+          <HubSpotTracking />
         </ThemeProvider>
       </body>
     </html>

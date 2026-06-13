@@ -1,8 +1,7 @@
 import { SiteLayout } from "@/components/layout/site-layout";
-import { VolunteerForm } from "@/components/forms/volunteer-form";
+import { JoinForm } from "@/components/forms/join-form";
 import { FadeIn } from "@/components/motion/fade-in";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { createMetadata } from "@/lib/metadata";
 import { Heart, MapPin, Users, HandHeart } from "lucide-react";
 
@@ -70,26 +69,18 @@ export default function GetInvolvedPage() {
           </div>
 
           <FadeIn>
-            <Tabs defaultValue="general" className="mx-auto max-w-xl">
-              <TabsList className="grid w-full grid-cols-2 lg:grid-cols-4">
-                <TabsTrigger value="general">Volunteer</TabsTrigger>
-                <TabsTrigger value="leadership">Leadership</TabsTrigger>
-                <TabsTrigger value="prayer">Prayer</TabsTrigger>
-                <TabsTrigger value="county_rep">County</TabsTrigger>
-              </TabsList>
-              {OPTIONS.map((opt) => (
-                <TabsContent key={opt.id} value={opt.id}>
-                  <Card className="mt-4">
-                    <CardHeader>
-                      <CardTitle>Apply: {opt.title}</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <VolunteerForm defaultType={opt.id} />
-                    </CardContent>
-                  </Card>
-                </TabsContent>
-              ))}
-            </Tabs>
+            <Card className="mx-auto max-w-xl">
+              <CardHeader>
+                <CardTitle>Join Ignite Michigan</CardTitle>
+                <CardDescription>
+                  Sign up to stay connected. All fields marked required must be
+                  completed before submission.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <JoinForm />
+              </CardContent>
+            </Card>
           </FadeIn>
         </div>
       </section>
