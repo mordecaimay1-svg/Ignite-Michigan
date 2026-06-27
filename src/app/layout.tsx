@@ -6,7 +6,6 @@ import { Analytics } from "@/components/analytics";
 import { HubSpotTracking } from "@/components/hubspot-tracking";
 import { Toaster } from "@/components/ui/sonner";
 import { createMetadata } from "@/lib/metadata";
-import { LOGO } from "@/lib/constants";
 import "./globals.css";
 
 const inter = Inter({
@@ -29,8 +28,8 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   ...createMetadata(),
   icons: {
-    icon: LOGO.path,
-    apple: LOGO.path,
+    icon: [{ url: "/favicon.ico", sizes: "any" }],
+    apple: [{ url: "/apple-icon.png", type: "image/png", sizes: "180x180" }],
   },
 };
 
